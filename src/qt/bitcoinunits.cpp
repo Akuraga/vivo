@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Vivo Core developers
+// Copyright (c) 2014-2017 The GoByte Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,9 +19,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(VIVO);
-    unitlist.append(mVIVO);
-    unitlist.append(uVIVO);
+    unitlist.append(GBX);
+    unitlist.append(mGBX);
+    unitlist.append(uGBX);
     unitlist.append(duffs);
     return unitlist;
 }
@@ -30,9 +30,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case VIVO:
-    case mVIVO:
-    case uVIVO:
+    case GBX:
+    case mGBX:
+    case uGBX:
     case duffs:
         return true;
     default:
@@ -46,9 +46,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case VIVO: return QString("VIVO");
-            case mVIVO: return QString("mVIVO");
-            case uVIVO: return QString::fromUtf8("μVIVO");
+            case GBX: return QString("GBX");
+            case mGBX: return QString("mGBX");
+            case uGBX: return QString::fromUtf8("μGBX");
             case duffs: return QString("duffs");
             default: return QString("???");
         }
@@ -57,9 +57,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case VIVO: return QString("tVIVO");
-            case mVIVO: return QString("mtVIVO");
-            case uVIVO: return QString::fromUtf8("μtVIVO");
+            case GBX: return QString("tGBX");
+            case mGBX: return QString("mtGBX");
+            case uGBX: return QString::fromUtf8("μtGBX");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }
@@ -72,10 +72,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case VIVO: return QString("Vivo");
-            case mVIVO: return QString("Milli-Vivo (1 / 1" THIN_SP_UTF8 "000)");
-            case uVIVO: return QString("Micro-Vivo (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Vivo (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case GBX: return QString("GoByte");
+            case mGBX: return QString("Milli-GoByte (1 / 1" THIN_SP_UTF8 "000)");
+            case uGBX: return QString("Micro-GoByte (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-GoByte (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -83,10 +83,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case VIVO: return QString("TestVivos");
-            case mVIVO: return QString("Milli-TestVivo (1 / 1" THIN_SP_UTF8 "000)");
-            case uVIVO: return QString("Micro-TestVivo (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestVivo (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case GBX: return QString("TestGoBytes");
+            case mGBX: return QString("Milli-TestGoByte (1 / 1" THIN_SP_UTF8 "000)");
+            case uGBX: return QString("Micro-TestGoByte (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-TestGoByte (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -96,9 +96,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case VIVO:  return 100000000;
-    case mVIVO: return 100000;
-    case uVIVO: return 100;
+    case GBX:  return 100000000;
+    case mGBX: return 100000;
+    case uGBX: return 100;
     case duffs: return 1;
     default:   return 100000000;
     }
@@ -108,9 +108,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case VIVO: return 8;
-    case mVIVO: return 5;
-    case uVIVO: return 2;
+    case GBX: return 8;
+    case mGBX: return 5;
+    case uGBX: return 2;
     case duffs: return 0;
     default: return 0;
     }

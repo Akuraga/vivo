@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. vivo_test
+	$(MAKE) -C .. gobyte_test
 clean:
-	$(MAKE) -C .. vivo_test_clean
+	$(MAKE) -C .. gobyte_test_clean
 check:
-	$(MAKE) -C .. vivo_test_check
+	$(MAKE) -C .. gobyte_test_check
